@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+
+<button>click me to chang color</button>
+<button>stop</button>
+
+<script>
+      /*Drawback:- you can not have multiple
+ handlers for the some event type with inline events. 
+
+
+ example of listen & event handler */
+    const btn = document.querySelector("button");
+    const btn1 = document.querySelector("button");
+   /* btn.addEventListener("click",function(){
+        document.body.style.backgroundColor =rgb(0,0,0);
+    });*/
+
+ function random(max) {
+    return Math.floor(Math.random()*max);
+ }
+ function changeBackground(){
+    const r = random(255);
+    const g = random(255);
+    const b = random(255);
+    document.body.style.backgroundColor = "rgb(" +r+ "," +g+" ,"+b+")";
+
+ }
+ btn.addEventListener("click", changeBackground);
+ function showAlert() {
+    alert("hello");
+}
+btn.addEventListener("click", showAlert);
+</script>
+</body>
+</html>
+
+
+
